@@ -1,0 +1,108 @@
+<style type="text/css">
+/*<![CDATA[*/
+
+body {
+margin:0;
+}
+div.header{
+overflow: hidden;
+position: fixed;
+left: 0;
+top: 0;
+width: 100%;
+height:50px;
+}
+div.container{
+/*
+border: solid 1px yellow;
+*/
+position: inherit;
+width: 100%;
+margin-top:75px;
+margin-bottom:95px;
+}
+#conteneur:after {
+content: ""; /* Important, sinon l'élément n'est pas généré. */
+display: table;
+clear: both;
+}
+.rang{
+border: solid 2px lightgrey;
+position: inherit;
+width: 1275px;
+margin-bottom:45px;
+margin-left: 45px;
+}
+.rang:after {
+content: ""; /* Important, sinon l'élément n'est pas généré. */
+display: table;
+clear: both;
+}
+div.content{
+border: solid 2px grey;
+border-bottom: solid 25px grey;
+float:left;
+width:200px;
+height:200px;
+margin: 25px;
+}
+div.content img{
+ margin-left:50px;
+ margin-top:40px;
+ width:100px; 
+ height:100px;
+}
+div.content p{
+margin-top:25px;
+padding:9px 12px;
+font-family:sans-serif;
+font-weight: bold;
+font-size:1.65em;
+text-align:right;
+color:grey;
+}
+div.footer{
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+height:50px;
+}
+ul {
+list-style-type: none;
+margin: 0;
+padding: 0;
+overflow: hidden;
+background-color: grey;
+}
+li {
+float: left;
+}
+li a {
+font-size: 1em;
+font-family:sans-serif;
+display: block;
+color: white;
+text-align: center;
+padding: 17px 15px;
+text-decoration: none;
+border-right: solid 2.5px white;
+}
+
+li a:hover {
+background-color: lightgrey;
+color:grey;
+}
+
+.recherche{
+margin-left:500px;
+}
+input{
+background-color:lightgrey;
+border:none;
+
+}
+
+
+  /*]]>*/
+  </style>
