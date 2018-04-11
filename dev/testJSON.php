@@ -41,10 +41,16 @@
 #fwrite($fp, json_encode($response));
 #fclose($fp);
 
-$data = array();
-$data['title'] = $_POST['title'];
-$data['url'] = $_POST['url'];
-$data['img'] = $_POST['img'];
+
+
+while (isset($_POST['title'])) {
+
+$data[ $name] = new stdClass();
+$data[ $name] -> title = $_POST['title'];
+$data[ $name] -> url = $_POST['url'];
+$data[ $name] -> img = $_POST['img'];
+
+
 
 //format the data
 $formattedData = json_encode($data);
