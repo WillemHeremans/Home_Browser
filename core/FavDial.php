@@ -50,16 +50,16 @@
 					<form action="" method="post" id="test">
 		
 						  			<label>Title:</label>
-						  			<input type="text" name="title"></input><br />
+						  			<input type="text" name="title"><br />
 						 
 						  			<label>Description:</label>
-						  			<input type="text" name="description"></input><br />
+						  			<input type="text" name="description"><br />
 						  			
 						  			<label>url:</label>
-						  			<input type="text" name="url"></input><br />
+						  			<input type="text" name="url"><br />
 						  			
 						  			<label>Icone:</label>
-						  			<input type="text" name="img"></input><br />
+						  			<input type="text" name="img"><br />
 						  			
 						  			<input type="submit" />
 						  			</form>

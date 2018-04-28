@@ -28,11 +28,9 @@
 	  <div class="modalLayer" id="add_dial">
 		<div class="popup_block">
 		<a href="#home" class="croix">&#10006;</a>
-		<form action="" method="post" id="test">
-		
-		      			<form action="" method="post" id="test">
+		      			<form method="post">
 		      			<label>Title:</label>
-		      			<input type="text" name="title"></input><br />
+		      			<input type="text" name="title"><br />
 		      			<input type="submit" />
 		      			</form>
 		</div>
