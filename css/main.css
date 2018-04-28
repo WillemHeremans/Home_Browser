@@ -94,6 +94,16 @@ background-color: lightgrey;
 color:grey;
 }
 
+li.category  {
+float: right;
+}
+
+li.category a {
+float: right;
+margin-left:85%;
+border-left: solid 2.5px white;
+}
+
 .recherche{
 margin-left:500px;
 }
@@ -119,7 +129,7 @@ display: none;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
- #add_item:target{
+ #add_dial:target, #add_item:target{
 display: block;
 }
 .popup_block{
