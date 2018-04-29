@@ -20,14 +20,15 @@
 			}
 
 
-			$pdo->query("CREATE TABLE IF NOT EXISTS dial ( 
+			$pdo->query("CREATE TABLE IF NOT EXISTS dial
+				( 
 				id            INTEGER         PRIMARY KEY AUTOINCREMENT,
 				titre         VARCHAR( 250 ),
 				description   VARCHAR( 250 ),
 				url           VARCHAR( 250 ),
 				img           VARCHAR( 250 )
-			
-			);");
+				);"
+				);
 	
 	
 			//Adding new FavDial: 
