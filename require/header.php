@@ -73,7 +73,7 @@
 		{
 		
 			$name = str_replace(['db/', '.sqlite'], '', $filename);
-		    echo '<li><a href="?'.$name.'">'.$name.'</a></li>';
+		    echo '<li><a href="#'.$name.'">'.$name.'</a></li>';
 		}
 		
 	echo '
