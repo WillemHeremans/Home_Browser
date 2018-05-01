@@ -13,7 +13,7 @@
 			<div class="modalLayer" id="add_item">
 			<div class="popup_block">
 				<a href="#home" class="croix">&#10006;</a>
-					<form method="post" id="Favoris">
+					<form method="post" id="content">
 						<label>Title:</label>
 							<input type="text" name="title"><br />
 						<label>Description:</label>
@@ -22,7 +22,7 @@
 							<input type="text" name="url"><br />
 						<label>Icone:</label>
 							<input type="text" name="img"><br />
-							<input type="hidden" name="add_item" value="Favoris">
+							<input type="hidden" name="add_item" value="content">
 							<input type="submit" />
 					</form>
 			</div>

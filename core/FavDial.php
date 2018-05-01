@@ -7,11 +7,13 @@
 		function createDial() 
 		
 			{
+			
+				$dialname = $_POST['add_dial'];
 		
 			// Creating db for new FavDial:
 				
 				try{
-				$pdo = new PDO('sqlite:'.dirname(__PATH__).'/db/'.$_POST['add_dial'].'.sqlite');
+				$pdo = new PDO('sqlite:'.dirname(__PATH__).'/db/'.$dialname.'.sqlite');
 				$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			} catch(Exception $e) {
@@ -32,17 +34,44 @@
 	
 	
 			//Adding new FavDial: 
-	
-				$file = './include/'.$_POST['add_dial'].'.php';
 			
+				
+				$dialname = $_POST['add_dial'];
+				$file = './include/'.$dialname.'.php';
 				$save = fopen($file, 'w+');
 				$dial = '
-	<div class="rang" id="'.$_POST['add_dial'].'">
+				<?php
+				$dbname = "'.$dialname.'";
+				try
+			
+					{
+					$pdo = new PDO(\'sqlite:\'.dirname(__DIR__).\'/db/\'.$dbname.\'.sqlite\');
+					$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+					$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+					} 
+					catch(Exception $e)
+					{
+					echo "Impossible d\'accéder à la base de données SQLite : ".$e->getMessage();
+					die();
+					};
+				
+					$phrase_sql = "SELECT * FROM dial;";
+					$preparation = $pdo->prepare($phrase_sql);
+					$preparation->execute();
+					$data=$preparation->fetchAll( PDO::FETCH_ASSOC );
+				?>
+	<div class="rang">
+	<?php foreach ($data as $data):?>
+				<div class="content">
+				<a title="<?php echo $data[\'description\']?>" href="http://<?php echo $data[\'url\']?>"><img src="<?php echo $data[\'img\']?>" /></a>
+				<p><?php echo $data[\'titre\']?></p>
+			</div>
+			<?php endforeach?>
 		<div class="content">
-			<a title="Add content..." href="#add_item"><img src="./img/add.svg" /></a>
+			<a title="Add content..." href="#'.$dialname.'"><img src="./img/add.svg" /></a>
 			<p>Add</p>
 		</div>
-			<div class="modalLayer" id="add_item">
+			<div class="modalLayer" id="'.$dialname.'">
 			<div class="popup_block">
 				<a href="#home" class="croix">&#10006;</a>
 					<form method="post">
@@ -54,7 +83,7 @@
 							<input type="text" name="url"><br />
 						<label>Icone:</label>
 							<input type="text" name="img"><br />
-							<input type="hidden" name="add_item" value="'.$_POST['add_dial'].'">
+							<input type="hidden" name="add_item" value="'.$dialname.'">
 							<input type="submit" />
 					</form>
 			</div>

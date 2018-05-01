@@ -8,7 +8,7 @@
 			{
 				try
 				{
-				$pdo = new PDO('sqlite:'.dirname(__PATH__).'/db/'.$_POST['add_item'].'.sqlite');
+				$pdo = new PDO('sqlite:'.dirname(__DIR__).'/db/'.$_POST['add_item'].'.sqlite');
 				$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				} 
