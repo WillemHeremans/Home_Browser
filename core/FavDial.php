@@ -35,38 +35,20 @@
 	
 			//Adding new FavDial: 
 			
-				
-				$dialname = $_POST['add_dial'];
 				$file = './include/'.$dialname.'.php';
 				$save = fopen($file, 'w+');
 				$dial = '
-				<?php
-				$dbname = "'.$dialname.'";
-				try
-			
-					{
-					$pdo = new PDO(\'sqlite:\'.dirname(__DIR__).\'/db/\'.$dbname.\'.sqlite\');
-					$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-					$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-					} 
-					catch(Exception $e)
-					{
-					echo "Impossible d\'accéder à la base de données SQLite : ".$e->getMessage();
-					die();
-					};
 				
-					$phrase_sql = "SELECT * FROM dial;";
-					$preparation = $pdo->prepare($phrase_sql);
-					$preparation->execute();
-					$data=$preparation->fetchAll( PDO::FETCH_ASSOC );
-				?>
 	<div class="rang">
-	<?php foreach ($data as $data):?>
-				<div class="content">
-				<a title="<?php echo $data[\'description\']?>" href="http://<?php echo $data[\'url\']?>"><img src="<?php echo $data[\'img\']?>" /></a>
-				<p><?php echo $data[\'titre\']?></p>
-			</div>
-			<?php endforeach?>
+	
+		<?php
+		$dbname = "'.$dialname.'";
+		include_once "./core/ConnectDB.php";
+		$show_db = new ConnectDB;
+		$show_db -> connect();
+		?>
+	
+	
 		<div class="content">
 			<a title="Add content..." href="#'.$dialname.'"><img src="./img/add.svg" /></a>
 			<p>Add</p>

@@ -25,6 +25,19 @@
 					$preparation = $pdo->prepare($phrase_sql);
 					$preparation->execute();
 					$data=$preparation->fetchAll( PDO::FETCH_ASSOC );
+					
+				foreach ($data as $data)
+	{
+	echo '
+	
+	<div class="content">
+				<a title="'.$data['description'].'" href="http://'.$data['url'].'"><img src="'.$data['img'].'" /></a>
+				<p>'.$data['titre'].'</p>
+			</div>
+	
+	
+	';
+	}
 		
 		}
 		
