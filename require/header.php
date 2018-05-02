@@ -28,11 +28,11 @@
 					<ul>
 		';
 	    
-    foreach (glob("db/*.sqlite") as $filename)
+    foreach (glob("include/*.php") as $filename)
 		
 		{
 		
-			$name = str_replace(['db/', '.sqlite'], '', $filename);
+			$name = str_replace(['include/', '.php'], '', $filename);
 		    echo '<li><a href="#'.$name.'">'.$name.'</a></li>';
 		}
 		
