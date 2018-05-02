@@ -7,9 +7,8 @@
 		function request ()
 		
 		{
-			global $dbname;
-			try
 			
+			try
 					{
 					$pdo = new PDO('sqlite:'.dirname(__DIR__).'/db/'.$dbname.'.sqlite');
 					$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -26,26 +25,18 @@
 					$preparation->execute();
 					$data=$preparation->fetchAll( PDO::FETCH_ASSOC );
 					
-				foreach ($data as $data)
-	{
-	echo '
-	
-	<div class="content">
-				<a title="'.$data['description'].'" href="http://'.$data['url'].'"><img src="'.$data['img'].'" /></a>
-				<p>'.$data['titre'].'</p>
-			</div>
-	
-	
-	';
-	}
+					foreach ($data as $data)			
+					{
+					echo '
+					<div class="content">
+						<a title="'.$data['description'].'" href="http://'.$data['url'].'"><img src="'.$data['img'].'" /></a>
+						<p>'.$data['titre'].'</p>
+					</div>
+
+					';
+					}
 		
 		}
 		
-	
-	
-	
 	};
-
-
-
 
