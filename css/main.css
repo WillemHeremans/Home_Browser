@@ -46,6 +46,14 @@ width:200px;
 height:200px;
 margin: 25px;
 }
+div.content:hover{
+border: solid 2px lightgrey;
+border-bottom: solid 25px lightgrey;
+float:left;
+width:200px;
+height:200px;
+margin: 25px;
+}
 div.content img{
  margin-left:50px;
  margin-top:40px;

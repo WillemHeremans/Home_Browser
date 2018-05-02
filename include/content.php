@@ -3,6 +3,7 @@
 	echo '
 	<div class="rang">
 		<div class="content">
+		<a href="#home" class="delete">&#9776;</a>
 		<a title="Go to..." href="https://facebook.com"><img src="./img/facebook.png" /></a>
 		<p>Exemple</p>
 		</div>
