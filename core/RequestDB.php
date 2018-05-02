@@ -7,7 +7,7 @@
 		function request ()
 		
 		{
-			
+			global $dbname;
 			try
 					{
 					$pdo = new PDO('sqlite:'.dirname(__DIR__).'/db/'.$dbname.'.sqlite');
@@ -32,7 +32,6 @@
 						<a title="'.$data['description'].'" href="http://'.$data['url'].'"><img src="'.$data['img'].'" /></a>
 						<p>'.$data['titre'].'</p>
 					</div>
-
 					';
 					}
 		
