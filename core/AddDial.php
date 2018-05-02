@@ -10,7 +10,7 @@
 			
 				$dialname = $_POST['add_dial'];
 		
-			// Creating db for new AddDial:
+			// Creating db for new Dial:
 				
 				try{
 				$pdo = new PDO('sqlite:'.dirname(__PATH__).'/db/'.$dialname.'.sqlite');
@@ -33,11 +33,12 @@
 				);
 	
 	
-			//Adding new AddDial: 
+			//Adding file for new Dial: 
 			
 				$file = './include/'.$dialname.'.php';
 				$save = fopen($file, 'w+');
-				$dial = '<div class="rang">
+				$dial = '
+				<div class="rang">
 	
 							<?php
 							$dbname = "'.$dialname.'";

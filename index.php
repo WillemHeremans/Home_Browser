@@ -28,5 +28,4 @@
 		
 	require './require/footer.php';
 
-
 ?>

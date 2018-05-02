@@ -6,6 +6,8 @@
 		function createItem () 
 			
 			{
+			
+				//Connection to dial's db:
 				try
 				{
 				$pdo = new PDO('sqlite:'.dirname(__DIR__).'/db/'.$_POST['add_item'].'.sqlite');
@@ -18,6 +20,7 @@
 				die();
 				};
 				
+				//Insert item datas to dial's db:
 				$phrase_sql = "INSERT INTO dial (titre, description, url, img)
     VALUES (:titre, :description, :url, :img)";
 	$preparation = $pdo->prepare($phrase_sql);
