@@ -46,8 +46,10 @@
 							<input type="text" name="url" value="'.$data['url'].'"><br />
 						<label>Icone:</label>
 							<input type="text" name="img" value="'.$data['img'].'"><br />
-							<input type="hidden" name="add_item" value="content">
-							<input type="submit" />
+							<input type="hidden" name="update_item" value="'.$tablename.'">
+							<input type="hidden" name="item_id" value="'.$data['id'].'">
+							<input type="submit" name="update" value="Update"/>
+							<input type="submit" name="delete" value="Delete"/>
 					</form>
 			</div>
 			</div>
