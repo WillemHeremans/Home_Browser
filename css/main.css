@@ -115,11 +115,12 @@ border:none;
 .settings{
 float: right;
 cursor: pointer;
-color: black;
+color: grey;
 text-decoration: none;
+font-size:1.5em;
 }
 .settings:hover{
-color:red;
+color:black;
 
 
   /*]]>*/
