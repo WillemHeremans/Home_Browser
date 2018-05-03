@@ -1,41 +1,31 @@
 <style type="text/css">
 /*<![CDATA[*/
-
-/*Modal Box */ 
-				 
+	 
 #modalCheck{
 display: none;
 }
 .modalLayer{
-  overflow: auto;
-  display: none;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+overflow: auto;
+display: none;
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-color: rgba(0, 0, 0, 0.5);
 }
  #add_dial:target, #add_item:target{
 display: block;
 }
 .popup_block{
-  background: rgba(245, 245, 245, 0.7);
-  padding: 2.5%;
-  position: relative;
-  margin: 5% auto;
-  width: 60%;
-  box-shadow: 0px 0px 20px #000;
-  border-radius: 5px;
+background: rgba(245, 245, 245, 0.7);
+padding: 2.5%;
+position: relative;
+margin: 5% auto;
+width: 60%;
+box-shadow: 0px 0px 20px #000;
+border-radius: 5px;
 }
-.delete{
-float: right;
-cursor: pointer;
-color: black;
-text-decoration: none;
-}
-.delete:hover{
-color:red;
 
 }
 .croix{
