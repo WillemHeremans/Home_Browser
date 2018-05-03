@@ -28,13 +28,17 @@
 					foreach ($data as $data)			
 					{
 					echo '
+					<style>
+					#settings'.$data['modal_name'].':target{
+					display: block;}
+					</style>
 					<div class="content">
-						<a href="#settings'.$tablename.'" class="settings">&#9776;</a>
+						<a href="#settings'.$data['modal_name'].'" class="settings">&#9776;</a>
 						<a title="'.$data['description'].'" href="http://'.$data['url'].'"><img src="'.$data['img'].'" /></a>
 						<p>'.$data['titre'].'</p>
 					</div>
 					
-					<div class="modalLayer" id="settings'.$tablename.'">
+					<div class="modalLayer" id="settings'.$data['modal_name'].'">
 			<div class="popup_block">
 				<h1>Update or delete item <a href="#home" class="croix">&#10006;</a></h1>
 					<form method="post" id="content">
@@ -48,8 +52,8 @@
 							<input type="text" name="img" value="'.$data['img'].'"><br />
 							<input type="hidden" name="update_item" value="'.$tablename.'">
 							<input type="hidden" name="item_id" value="'.$data['id'].'">
-							<input type="submit" name="update" value="Update"/>
-							<input type="submit" name="delete" value="Delete"/>
+							<input type="submit" name="update" value="update"/>
+							<input type="submit" name="delete" value="delete"/>
 					</form>
 			</div>
 			</div>

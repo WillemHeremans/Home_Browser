@@ -29,7 +29,8 @@
 				titre         VARCHAR( 250 ),
 				description   VARCHAR( 250 ),
 				url           VARCHAR( 250 ),
-				img           VARCHAR( 250 )
+				img           VARCHAR( 250 ),
+				modal_name    VARCHAR( 250 )
 				);"
 				);
 	
