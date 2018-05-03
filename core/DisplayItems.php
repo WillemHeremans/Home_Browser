@@ -36,7 +36,7 @@
 					
 					<div class="modalLayer" id="settings'.$tablename.'">
 			<div class="popup_block">
-				<a href="#home" class="croix">&#10006;</a>
+				<h1>Update or delete item <a href="#home" class="croix">&#10006;</a></h1>
 					<form method="post" id="content">
 						<label>Titre:</label>
 							<input type="text" name="titre" value="'.$data['titre'].'"><br />

@@ -54,7 +54,7 @@
 							</div>
 								<div class="modalLayer" id="'.$rename.'">
 									<div class="popup_block">
-										<a href="#home" class="croix">&#10006;</a>
+									<h1>Add an item <a href="#home" class="croix">&#10006;</a></h1>
 											<form method="post">
 												<label>Titre:</label>
 													<input type="text" name="titre"><br />

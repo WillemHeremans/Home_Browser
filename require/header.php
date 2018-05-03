@@ -44,8 +44,7 @@
 			</div>
 		<div class="modalLayer" id="add_dial">
 			<div class="popup_block">
-				<a class="croix" href="#home">&#10006;</a>
-				<h1 style="text-align:center;color:grey;margin:0;">Add a category:</h1>
+				<h1>Add a category: <a class="croix" href="#home">&#10006;</a></h1>
 					<form method="post">
 						<label>Title:</label>
 						<input type="text" name="add_dial"><br />

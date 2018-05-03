@@ -13,7 +13,8 @@
 			</div>
 			<div class="modalLayer" id="add_item">
 			<div class="popup_block">
-				<a href="#home" class="croix">&#10006;</a>
+				
+				<h1>Add an item<a href="#home" class="croix">&#10006;</a></h1>
 					<form method="post" id="content">
 						<label>Title:</label>
 							<input type="text" name="title"><br />
@@ -32,6 +33,7 @@
 			<div class="modalLayer" id="settings">
 			<div class="popup_block">
 				<a href="#home" class="croix">&#10006;</a>
+				<h1>Update or delete item</h1>
 					<form method="post" id="content">
 						<label>Title:</label>
 							<input type="text" name="title"><br />
