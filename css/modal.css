@@ -14,7 +14,7 @@ left: 0;
 right: 0;
 background-color: rgba(0, 0, 0, 0.5);
 }
- #add_dial:target, #add_item:target{
+ #add_dial:target, #add_item:target , #settings:target{
 display: block;
 }
 .popup_block{

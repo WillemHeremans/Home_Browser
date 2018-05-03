@@ -17,6 +17,7 @@
 				{
 				$css = str_replace(['include/', '.php', ' '], '', $targetname);
 					echo "\n#$css:target{display: block;}\n";
+					echo "\n#settings$css:target{display: block;}\n";
 				};
 								
 	echo '

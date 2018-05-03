@@ -14,7 +14,7 @@
 			// Creating db for new Dial:
 				
 				try{
-				$pdo = new PDO('sqlite:'.dirname(__PATH__).'/db/'.$dialname.'.sqlite');
+				$pdo = new PDO('sqlite:'.dirname(__DIR__).'/db/home.sqlite');
 				$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
 				$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			} catch(Exception $e) {
@@ -23,7 +23,7 @@
 			}
 
 
-			$pdo->query("CREATE TABLE IF NOT EXISTS dial
+			$pdo->query("CREATE TABLE IF NOT EXISTS $modal_id
 				( 
 				id            INTEGER         PRIMARY KEY AUTOINCREMENT,
 				titre         VARCHAR( 250 ),
@@ -39,10 +39,10 @@
 				$file = './include/'.$dialname.'.php';
 				$save = fopen($file, 'w+');
 				$dial = '
-				<div class="rang">
+							<div class="rang">
 	
 							<?php
-							$dbname = "'.$dialname.'";
+							$dbname = "'.$modal_id.'";
 							include_once "./core/RequestDB.php";
 							$show_db = new RequestDB;
 							$show_db -> request();
@@ -56,15 +56,15 @@
 									<div class="popup_block">
 										<a href="#home" class="croix">&#10006;</a>
 											<form method="post">
-												<label>Title:</label>
-													<input type="text" name="title"><br />
+												<label>Titre:</label>
+													<input type="text" name="titre"><br />
 												<label>Description:</label>
 													<input type="text" name="description"><br />
 												<label>url:</label>
 													<input type="text" name="url"><br />
 												<label>Icone:</label>
 													<input type="text" name="img"><br />
-													<input type="hidden" name="add_item" value="'.$dialname.'">
+													<input type="hidden" name="add_item" value="'.$modal_id.'">
 													<input type="submit" />
 											</form>
 									</div>
