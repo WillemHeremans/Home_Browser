@@ -15,7 +15,7 @@
 		foreach (glob("include/*.php") as $targetname)
 
 				{
-				$css = str_replace(['include/', '.php'], '', $targetname);
+				$css = str_replace(['include/', '.php', ' '], '', $targetname);
 					echo "\n#$css:target{display: block;}\n";
 				};
 								
@@ -33,7 +33,8 @@
 		{
 		
 			$name = str_replace(['include/', '.php'], '', $filename);
-		    echo '<li><a href="#'.$name.'">'.$name.'</a></li>';
+			$modal_id = preg_replace('/\s+/', '', $name);
+		    echo '<li><a href="#'.$modal_id.'">'.$name.'</a></li>';
 		}
 		
 	echo '

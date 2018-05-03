@@ -9,6 +9,7 @@
 			{
 			
 				$dialname = $_POST['add_dial'];
+				$modal_id = preg_replace('/\s+/', '', $dialname);
 		
 			// Creating db for new Dial:
 				
@@ -48,10 +49,10 @@
 							?>
 
 							<div class="content">
-								<a title="Add content..." href="#'.$dialname.'"><img src="./img/add.svg" /></a>
+								<a title="Add content..." href="#'.$modal_id.'"><img src="./img/add.svg" /></a>
 								<p>Add</p>
 							</div>
-								<div class="modalLayer" id="'.$dialname.'">
+								<div class="modalLayer" id="'.$modal_id.'">
 									<div class="popup_block">
 										<a href="#home" class="croix">&#10006;</a>
 											<form method="post">
