@@ -9,7 +9,7 @@
 			{
 			
 				$dialname = $_POST['add_dial'];
-				$modal_id = preg_replace('/\s+/', '', $dialname);
+				$rename = preg_replace('/\s+/', '', $dialname);
 		
 			// Creating db for new Dial:
 				
@@ -23,7 +23,7 @@
 			}
 
 
-			$pdo->query("CREATE TABLE IF NOT EXISTS $modal_id
+			$pdo->query("CREATE TABLE IF NOT EXISTS $rename
 				( 
 				id            INTEGER         PRIMARY KEY AUTOINCREMENT,
 				titre         VARCHAR( 250 ),
@@ -42,17 +42,17 @@
 							<div class="rang">
 	
 							<?php
-							$dbname = "'.$modal_id.'";
-							include_once "./core/RequestDB.php";
-							$show_db = new RequestDB;
-							$show_db -> request();
+							$tablename = "'.$rename.'";
+							include_once "./core/DisplayItems.php";
+							$show_db = new DisplayItems;
+							$show_db -> display();
 							?>
 
 							<div class="content">
-								<a title="Add content..." href="#'.$modal_id.'"><img src="./img/add.svg" /></a>
+								<a title="Add content..." href="#'.$rename.'"><img src="./img/add.svg" /></a>
 								<p>Add</p>
 							</div>
-								<div class="modalLayer" id="'.$modal_id.'">
+								<div class="modalLayer" id="'.$rename.'">
 									<div class="popup_block">
 										<a href="#home" class="croix">&#10006;</a>
 											<form method="post">
@@ -64,7 +64,7 @@
 													<input type="text" name="url"><br />
 												<label>Icone:</label>
 													<input type="text" name="img"><br />
-													<input type="hidden" name="add_item" value="'.$modal_id.'">
+													<input type="hidden" name="add_item" value="'.$rename.'">
 													<input type="submit" />
 											</form>
 									</div>

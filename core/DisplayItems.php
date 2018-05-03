@@ -1,13 +1,13 @@
 <?php
 	
-	class RequestDB 
+	class DisplayItems 
 	
 	{
 	
-		function request ()
+		function display ()
 		
 		{
-			global $dbname;
+			global $tablename;
 			try
 					{
 					$pdo = new PDO('sqlite:'.dirname(__DIR__).'/db/home.sqlite');
@@ -20,7 +20,7 @@
 					die();
 					};
 				
-					$phrase_sql = "SELECT * FROM $dbname;";
+					$phrase_sql = "SELECT * FROM $tablename;";
 					$preparation = $pdo->prepare($phrase_sql);
 					$preparation->execute();
 					$data=$preparation->fetchAll( PDO::FETCH_ASSOC );
@@ -29,12 +29,12 @@
 					{
 					echo '
 					<div class="content">
-						<a href="#settings'.$dbname.'" class="settings">&#9776;</a>
+						<a href="#settings'.$tablename.'" class="settings">&#9776;</a>
 						<a title="'.$data['description'].'" href="http://'.$data['url'].'"><img src="'.$data['img'].'" /></a>
 						<p>'.$data['titre'].'</p>
 					</div>
 					
-					<div class="modalLayer" id="settings'.$dbname.'">
+					<div class="modalLayer" id="settings'.$tablename.'">
 			<div class="popup_block">
 				<a href="#home" class="croix">&#10006;</a>
 					<form method="post" id="content">
