@@ -57,9 +57,8 @@
 							#'.$rename.':target{display: block;}
 							</style>
 
-							<div class="content">
-								<a title="Add content..." href="#'.$rename.'"><img src="./img/add.svg" /></a>
-								<p>Add</p>
+							<div class="add">
+								<a title="Add an item" href="#'.$rename.'"><img src="./img/add.svg" /></a>
 							</div>
 								<div class="modalLayer" id="'.$rename.'">
 									<div class="popup_block">

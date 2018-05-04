@@ -7,9 +7,8 @@
 		<a title="Go to..." href="https://facebook.com"><img src="./img/facebook.png" /></a>
 		<p>Exemple</p>
 		</div>
-			<div class="content">
+			<div class="add">
 			<a title="Add content..." href="#add_item"><img src="./img/add.svg" /></a>
-			<p>Add</p>
 			</div>
 			<div class="modalLayer" id="add_item">
 			<div class="popup_block">
