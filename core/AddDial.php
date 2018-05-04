@@ -11,10 +11,15 @@
 				$dialname = $_POST['add_dial'];
 				$dialname = str_replace('/', '_(_', $dialname);
 				$dialname = str_replace('\\', '_)_', $dialname);
+				
 				$rand_id = rand(7, 77);
+				
 				$rename = preg_replace('/[#$%^&*()+=\-\[\]\';,.\/{}|":<>?~!°\\\\]/', 'w', $dialname);
 				$rename = preg_replace('/\s+/', '_', $rename);
 				$rename = $rename.$rand_id;
+				
+				$dial_id = $_POST['add_dial'];
+				$dial_id = preg_replace('/\s+/', '', $dial_id);
 		
 			// Creating db for new Dial:
 				
@@ -45,7 +50,7 @@
 				$file = './include/'.$dialname.'.php';
 				$save = fopen($file, 'w+');
 				$dial = '
-							<div class="rang" id="'.$_POST['add_dial'].'">
+							<div class="rang" id="'.$dial_id.'">
 	
 							<?php
 							$tablename = "'.$rename.'";
