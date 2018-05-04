@@ -24,7 +24,10 @@
 				//Insert item datas to dial's db:
 				$table = $_POST['add_item'];
 				$itemname = $_POST['titre'];
-				$rename = preg_replace('/\s+/', '', $itemname);
+				$rand_id = rand(7, 77);
+				$rename = preg_replace('/[#$%^&*()+=\-\[\]\';,.\/{}|":<>?~!\\\\]/', $rand_id, $itemname);
+				$rename = preg_replace('/\s+/', $rand_id, $rename);
+				$rename = $rename.$rand_id;
 				$phrase_sql = "INSERT INTO $table (titre, description, url, img, modal_name)
     VALUES (:titre, :description, :url, :img, :modal_name)";
 	$preparation = $pdo->prepare($phrase_sql);
