@@ -9,8 +9,8 @@
 			{
 			
 				$dialname = $_POST['add_dial'];
-				$dialname = str_replace('/', '_', $dialname);
-				$dialname = str_replace('\\', '-', $dialname);
+				$dialname = str_replace('/', '_(_', $dialname);
+				$dialname = str_replace('\\', '_)_', $dialname);
 				$rand_id = rand(7, 77);
 				$rename = preg_replace('/[#$%^&*()+=\-\[\]\';,.\/{}|":<>?~!°\\\\]/', 'w', $dialname);
 				$rename = preg_replace('/\s+/', '_', $rename);

@@ -21,8 +21,8 @@
 		{
 		
 			$name = str_replace(['include/', '.php'], '', $filename);
-			$name = str_replace('_', '/', $name);
-			$name = str_replace('-', '\\', $name);
+			$name = str_replace('_(_', '/', $name);
+			$name = str_replace('_)_', '\\', $name);
 			$modal_id = preg_replace('/\s+/', '', $name);
 		    echo '<li><a href="#'.$modal_id.'">'.$name.'</a></li>';
 		}
