@@ -9,19 +9,6 @@
 				 <link rel="icon" type="image/png" href="./img/firefox.png">
 				 <link rel="stylesheet" href="./css/main.css"/>
 				 <link rel="stylesheet" href="./css/modal.css"/>
-				 <style>
-				 ';
-				 
-		foreach (glob("include/*.php") as $targetname)
-
-				{
-				$css = str_replace(['include/', '.php', ' '], '', $targetname);
-					echo "\n#$css:target{display: block;}\n";
-					echo "\n#settings$css:target{display: block;}\n";
-				};
-								
-	echo '
-				 </style>
 				 <title>Home</title>
 			  </head>
 		  		<body bgcolor="WhiteSmoke">
@@ -34,6 +21,8 @@
 		{
 		
 			$name = str_replace(['include/', '.php'], '', $filename);
+			$name = str_replace('_', '/', $name);
+			$name = str_replace('-', '\\', $name);
 			$modal_id = preg_replace('/\s+/', '', $name);
 		    echo '<li><a href="#'.$modal_id.'">'.$name.'</a></li>';
 		}

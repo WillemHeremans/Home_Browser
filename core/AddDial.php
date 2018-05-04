@@ -9,7 +9,12 @@
 			{
 			
 				$dialname = $_POST['add_dial'];
-				$rename = preg_replace('/\s+/', '', $dialname);
+				$dialname = str_replace('/', '_', $dialname);
+				$dialname = str_replace('\\', '-', $dialname);
+				$rand_id = rand(7, 77);
+				$rename = preg_replace('/[#$%^&*()+=\-\[\]\';,.\/{}|":<>?~!°\\\\]/', 'w', $dialname);
+				$rename = preg_replace('/\s+/', '_', $rename);
+				$rename = $rename.$rand_id;
 		
 			// Creating db for new Dial:
 				
@@ -48,6 +53,9 @@
 							$show_db = new DisplayItems;
 							$show_db -> display();
 							?>
+							<style>
+							#'.$rename.':target{display: block;}
+							</style>
 
 							<div class="content">
 								<a title="Add content..." href="#'.$rename.'"><img src="./img/add.svg" /></a>
