@@ -45,7 +45,7 @@
 				$file = './include/'.$dialname.'.php';
 				$save = fopen($file, 'w+');
 				$dial = '
-							<div class="rang">
+							<div class="rang" id="'.$_POST['add_dial'].'">
 	
 							<?php
 							$tablename = "'.$rename.'";
