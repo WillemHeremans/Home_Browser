@@ -84,6 +84,9 @@ font-size:1.65em;
 text-align:right;
 color:grey;
 }
+div.add a{
+outline: 0;
+}
 div.footer{
 position: fixed;
 left: 0;
