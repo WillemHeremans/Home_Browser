@@ -95,6 +95,8 @@
 									<label>Titre:</label>
 							<input type="text" name="update_dial" value="<?php echo $dialename ?>"><br />
 									<input type="hidden" name="dial_name" value="<?php echo $dialename ?>">
+									<input type="hidden" name="table" value="'.$rename.'">
+									<input type="hidden" name="file" value="<?php echo $dialename ?>">
 									<input type="submit" name="rename_dial" value="Rename"/>
 									<input type="submit" name="delete_dial" value="Delete"/>
 									</form>
