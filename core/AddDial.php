@@ -89,7 +89,7 @@
 												<label>Icone:</label>
 													<input type="text" name="img"><br />
 													<input type="hidden" name="add_item" value="'.$rename.'">
-													<input type="submit" />
+													<input type="submit" value="Add" />
 											</form>
 									</div>
 								</div>

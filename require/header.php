@@ -37,7 +37,7 @@
 					<form method="post">
 						<label>Title:</label>
 						<input type="text" name="add_dial"><br />
-						<input type="submit" />
+						<input type="submit" value="Add" />
 					</form>
 			</div>
 		</div>
