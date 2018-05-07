@@ -4,6 +4,7 @@
 	include_once './core/AddItem.php';
 	include_once './core/UpdateItem.php';
 	include_once './core/DeleteItem.php';
+	include_once './core/UpdateDial.php';
 	require './require/header.php';
   
       		if (isset($_POST['add_dial'])) 
@@ -35,6 +36,14 @@
 	      		{
 	      		$update_item = new DeleteItem;
 	      		$update_item -> delete();
+	      		
+	      		} 
+	      		
+	      		if (isset($_POST['rename_dial'])) 
+	      		
+	      		{
+	      		$update_dial = new UpdateDial;
+	      		$update_dial -> editDial();
 	      		
 	      		} 
  		
