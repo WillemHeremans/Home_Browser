@@ -6,8 +6,6 @@
 		function createItem () 
 			
 			{
-				
-			
 				//Connection to dial's db:
 				try
 				{
