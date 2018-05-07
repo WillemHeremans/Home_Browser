@@ -52,8 +52,13 @@
 				$file = './include/'.$filename.'.php';
 				$save = fopen($file, 'w+');
 				$dial = '
-							<?php $dialename = "'.$dialename.'";?>
-							<div class="rang" id="<?php echo $dialename ?>">
+							<?php 
+							$dialename = "'.$dialename.'";
+							$name = str_replace("_(_", "/", $dialename);
+							$name = str_replace("_)_", "\\\", $name);
+							$modal_id = preg_replace("/\s+/", "", $name);
+							;?>
+							<div class="rang" id="<?php echo $modal_id ?>">
 	
 							<?php
 							$tablename = "'.$rename.'";
