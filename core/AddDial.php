@@ -52,14 +52,14 @@
 				$file = './include/'.$filename.'.php';
 				$save = fopen($file, 'w+');
 				$dial = '
-							<div class="rang" id="'.$dial_id.'">
+							<?php $dialename = "'.$dialename.'";?>
+							<div class="rang" id="<?php echo $dialename ?>">
 	
 							<?php
 							$tablename = "'.$rename.'";
 							include_once "./core/DisplayItems.php";
 							$show_db = new DisplayItems;
 							$show_db -> display();
-							$dialename = "'.$dialename.'";
 							?>
 							<style>
 							#'.$rename.':target{display: block;}
