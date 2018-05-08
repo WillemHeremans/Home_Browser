@@ -13,7 +13,7 @@
 			$rename = str_replace('\\', '_)_', $rename);
 			
 			$str=file_get_contents('./include/'.$oldname.'.php');
-			$str=str_replace('$dialename = "$oldname"', '$dialename = "$newname"', $str);
+			$str=str_replace('$dialename = "'.$oldname.'"', '$dialename = "'.$newname.'"',$str);
 			file_put_contents('./include/'.$oldname.'.php', $str);
 			
 			rename ("./include/$oldname.php", "./include/$rename.php");
