@@ -10,17 +10,17 @@
 			
 				$dialename = $_POST['add_dial'];
 				
-				// Rename dial to obtain a valid file name:
+				//Renaming dial to obtain a valid file name:
 				$filename = str_replace('/', '_(_', $dialename);
 				$filename = str_replace('\\', '_)_', $filename);
 				
-				// Rename dial to obtain a valid and unique (id) table name:
+				//Renaming dial to obtain a valid and unique (id) table name:
 				$rename = preg_replace('/[#$%^&*()+=\-\[\]\';,.\/{}|":<>?~!°\\\\]/', 'w', $filename);
 				$rename = preg_replace('/\s+/', '_', $rename);
 				$rand_id = rand(7, 77);
 				$rename = $rename.$rand_id;
 				
-				// Creating db if not exists:
+				//Creating db if not exists:
 				try{
 				$pdo = new PDO('sqlite:'.dirname(__DIR__).'/db/home.sqlite');
 				$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -30,7 +30,7 @@
 				die();
 			}
 
-				// Creating table if not exists:
+				//Creating table if not exists:
 				$pdo->query("CREATE TABLE IF NOT EXISTS $rename
 				( 
 				id            INTEGER         PRIMARY KEY AUTOINCREMENT,
