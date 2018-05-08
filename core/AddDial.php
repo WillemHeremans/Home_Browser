@@ -9,22 +9,18 @@
 			{
 			
 				$dialename = $_POST['add_dial'];
+				
+				// Rename dial to obtain a valid file name:
 				$filename = str_replace('/', '_(_', $dialename);
 				$filename = str_replace('\\', '_)_', $filename);
 				
-				$rand_id = rand(7, 77);
-				
+				// Rename dial to obtain a valid and unique (id) table name:
 				$rename = preg_replace('/[#$%^&*()+=\-\[\]\';,.\/{}|":<>?~!°\\\\]/', 'w', $filename);
 				$rename = preg_replace('/\s+/', '_', $rename);
+				$rand_id = rand(7, 77);
 				$rename = $rename.$rand_id;
 				
-				$dial_id = $_POST['add_dial'];
-				$dial_id = preg_replace('/\s+/', '', $dial_id);
-				
-				
-		
-			// Creating db for new Dial:
-				
+				// Creating db if not exists:
 				try{
 				$pdo = new PDO('sqlite:'.dirname(__DIR__).'/db/home.sqlite');
 				$pdo->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -34,8 +30,8 @@
 				die();
 			}
 
-
-			$pdo->query("CREATE TABLE IF NOT EXISTS $rename
+				// Creating table if not exists:
+				$pdo->query("CREATE TABLE IF NOT EXISTS $rename
 				( 
 				id            INTEGER         PRIMARY KEY AUTOINCREMENT,
 				titre         VARCHAR( 250 ),
@@ -45,10 +41,8 @@
 				modal_name    VARCHAR( 250 )
 				);"
 				);
-	
-	
+
 			//Adding file for new Dial: 
-			
 				$file = './include/'.$filename.'.php';
 				$save = fopen($file, 'w+');
 				$dial = '
