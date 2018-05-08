@@ -21,6 +21,8 @@
 			
 			$table = $_POST['table'];
 			$file = $_POST['file'];
+			$file = str_replace('/', '_(_', $file);
+			$file = str_replace('\\', '_)_', $file);
 			$phrase_sql = "DROP table $table";
 			$preparation = $pdo->prepare($phrase_sql);
 			
