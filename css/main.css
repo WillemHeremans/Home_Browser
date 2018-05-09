@@ -58,6 +58,9 @@ font-size:1.65em;
 text-align:right;
 color:grey;
 }
+div.content a{
+outline: 0;
+}
 div.content:hover{
 border: solid 2px lightgrey;
 border-bottom: solid 25px lightgrey;
