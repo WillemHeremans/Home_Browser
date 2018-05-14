@@ -23,8 +23,19 @@
 			$name = str_replace(['include/', '.php'], '', $filename);
 			$name = str_replace('_(_', '/', $name);
 			$name = str_replace('_)_', '\\', $name);
-			$modal_id = preg_replace('/\s+/', '', $name);
-		    echo '<li><a href="#'.$modal_id.'" onclick="if(document.getElementById('."`$modal_id`".').style.display === '."`none`".'){document.getElementById('."`$modal_id`".').style.display = '."`block`".'; this.style.textDecoration = '."`none`".'; document.cookie = '."`$modal_id=unhide`".';}else{document.getElementById('."`$modal_id`".').style.display = '."`none`".'; this.style.textDecoration = '."`line-through`".'; document.cookie = '."`$modal_id=hide`".';}">'.$name.'</a></li>';
+			$rang_id = preg_replace('/\s+/', '', $name);
+			$tab_id = chr(rand(65,90));
+			
+			if (isset($_COOKIE["$rang_id"])&&($_COOKIE["$rang_id"]) == 'hide')
+			
+			{
+			
+				echo '<style>#'.$rang_id.'{display:none;} #'.$tab_id.'{text-decoration:line-through;}</style>';
+			
+			}
+			
+			
+		    echo '<li><a id="'.$tab_id.'" href="#'.$rang_id.'" onclick="if(document.getElementById('."`$rang_id`".').style.display === '."`none`".'){document.getElementById('."`$rang_id`".').style.display = '."`block`".'; this.style.textDecoration = '."`none`".'; document.cookie = '."`$rang_id=unhide`".';}else{document.getElementById('."`$rang_id`".').style.display = '."`none`".'; this.style.textDecoration = '."`line-through`".'; document.cookie = '."`$rang_id=hide`".';}">'.$name.'</a></li>';
 		}
 		
 	echo '
