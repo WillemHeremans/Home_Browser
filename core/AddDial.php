@@ -17,7 +17,7 @@
 				//Renaming dial to obtain a valid and unique (id) table name:
 				$rename = preg_replace('/[#$%^&*()+=\-\[\]\';,.\/{}|":<>?~!°\\\\]/', 'w', $filename);
 				$rename = preg_replace('/\s+/', '_', $rename);
-				$rand_id = rand(7, 77);
+				$rand_id = rand(1, 100);
 				$rename = $rename.$rand_id;
 				
 				//Creating db if not exists:
