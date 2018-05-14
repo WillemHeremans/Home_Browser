@@ -24,7 +24,7 @@
 			$name = str_replace('_(_', '/', $name);
 			$name = str_replace('_)_', '\\', $name);
 			$modal_id = preg_replace('/\s+/', '', $name);
-		    echo '<li><a href="#'.$modal_id.' "onclick="if(document.getElementById('."`$modal_id`".').style.display === '."`none`".'){document.getElementById('."`$modal_id`".').style.display = '."`block`".'; this.style.textDecoration = '."`none`".'}else{document.getElementById('."`$modal_id`".').style.display = '."`none`".'; this.style.textDecoration = '."`line-through`".'}">'.$name.'</a></li>';
+		    echo '<li><a href="#'.$modal_id.'" onclick="if(document.getElementById('."`$modal_id`".').style.display === '."`none`".'){document.getElementById('."`$modal_id`".').style.display = '."`block`".'; this.style.textDecoration = '."`none`".'}else{document.getElementById('."`$modal_id`".').style.display = '."`none`".'; this.style.textDecoration = '."`line-through`".'}">'.$name.'</a></li>';
 		}
 		
 	echo '
