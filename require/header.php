@@ -28,14 +28,22 @@
 			
 			if (isset($_COOKIE["$rang_id"])&&($_COOKIE["$rang_id"]) == 'hide')
 			
+			{ 
+			
+				$toggle_rang = 'display:none;';
+				$toggle_tab =  'text-decoration:line-through;';
+			
+			}
+			else
 			{
 			
-				echo '<style>#'.$rang_id.'{display:none;} #'.$tab_id.'{text-decoration:line-through;}</style>';
-			
+				$toggle_rang = 'display:block;';
+				$toggle_tab =  'text-decoration:none;';
+				
 			}
 			
 			
-		    echo '<li><a id="'.$tab_id.'" href="#'.$rang_id.'" onclick="if(document.getElementById('."`$rang_id`".').style.display === '."`none`".'){document.getElementById('."`$rang_id`".').style.display = '."`block`".'; this.style.textDecoration = '."`none`".'; document.cookie = '."`$rang_id=unhide`".';}else{document.getElementById('."`$rang_id`".').style.display = '."`none`".'; this.style.textDecoration = '."`line-through`".'; document.cookie = '."`$rang_id=hide`".';}">'.$name.'</a></li>';
+		    echo '<li><a style="'.$toggle_tab.'" href="#'.$rang_id.'" onclick="if(document.getElementById('."`$rang_id`".').style.display === '."`none`".'){document.getElementById('."`$rang_id`".').style.display = '."`block`".'; this.style.textDecoration = '."`none`".'; document.cookie = '."`$rang_id=unhide`".';}else{document.getElementById('."`$rang_id`".').style.display = '."`none`".'; this.style.textDecoration = '."`line-through`".'; document.cookie = '."`$rang_id=hide`".';}">'.$name.'</a></li>';
 		}
 		
 	echo '

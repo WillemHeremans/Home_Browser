@@ -51,8 +51,9 @@
 							$name = str_replace("_(_", "/", $dialename);
 							$name = str_replace("_)_", "\\\", $name);
 							$modal_id = preg_replace("/\s+/", "", $name);
+							global $toggle_rang;
 							;?>
-							<div class="rang" id="<?php echo $modal_id ?>">
+							<div class="rang" style="<?php echo $toggle_rang ?>" id="<?php echo $modal_id ?>">
 	
 							<?php
 							$tablename = "'.$rename.'";
