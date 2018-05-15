@@ -44,6 +44,7 @@
 			
 			
 		    echo '<li><a style="'.$toggle_tab.'" href="#'.$rang_id.'" onclick="if(document.getElementById('."`$rang_id`".').style.display === '."`none`".'){document.getElementById('."`$rang_id`".').style.display = '."`block`".'; this.style.textDecoration = '."`none`".'; document.cookie = '."`$rang_id=unhide`".';}else{document.getElementById('."`$rang_id`".').style.display = '."`none`".'; this.style.textDecoration = '."`line-through`".'; document.cookie = '."`$rang_id=hide`".';}">'.$name.'</a></li>';
+		    
 		}
 		
 	echo '
