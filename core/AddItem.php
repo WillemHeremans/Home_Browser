@@ -26,7 +26,7 @@
 				//Renaming to obtain a valid and unique (id) modal name:
 				$rename = preg_replace('/[#$%^&*()+=\-\[\]\';,.\/{}|":<>?~!\\\\]/', $rand_id, $itemname);
 				$rename = preg_replace('/\s+/', $rand_id, $rename);
-				$rand_id = rand(1, 100);
+				$rand_id = rand();
 				$rename = $rename.$rand_id;
 				
 				//Insert item datas to dial's db:
