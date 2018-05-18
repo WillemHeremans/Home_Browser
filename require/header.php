@@ -24,7 +24,6 @@
 			$name = str_replace('_(_', '/', $name);
 			$name = str_replace('_)_', '\\', $name);
 			$rang_id = preg_replace('/\s+/', '', $name);
-			$tab_id = chr(rand(65,90));
 			
 			if (isset($_COOKIE["$rang_id"])&&($_COOKIE["$rang_id"]) == 'hide')
 			
