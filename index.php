@@ -15,6 +15,20 @@
 		$add_dial = new AddDial;
 		$add_dial -> createDial();
 		} 
+		
+		if (isset($_POST['rename_dial'])) 
+
+		{
+		$update_dial = new UpdateDial;
+		$update_dial -> editDial();
+		} 
+		
+		if (isset($_POST['delete_dial'])) 
+
+		{
+		$delete_dial = new DeleteDial;
+		$delete_dial -> delete();
+		} 
 
 		if (isset($_POST['add_item'])) 
 
@@ -33,22 +47,8 @@
 		if (isset($_POST['delete'])) 
 
 		{
-		$update_item = new DeleteItem;
-		$update_item -> delete();
-		} 
-
-		if (isset($_POST['rename_dial'])) 
-
-		{
-		$update_dial = new UpdateDial;
-		$update_dial -> editDial();
-		} 
-
-		if (isset($_POST['delete_dial'])) 
-
-		{
-		$update_dial = new DeleteDial;
-		$update_dial -> delete();
+		$delete_item = new DeleteItem;
+		$delete_item -> delete();
 		} 
 
 		foreach (glob("include/*.php") as $filename)
